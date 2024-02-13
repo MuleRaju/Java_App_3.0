@@ -19,7 +19,7 @@ pipeline{
             steps{
             gitCheckout(
                 branch: "main",
-                url: "https://github.com/<YourGitHub>/Java_app_3.0.git"
+                url: "https://github.com/MuleRaju/Java_app_3.0.git"
             )
             }
         }
@@ -102,7 +102,7 @@ pipeline{
           when { expression {  params.action == 'create' } }
           steps{
             script{
-                 sh 'curl -X PUT -u admin:password -T  /var/lib/jenkins/workspace/java-3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar "http://18.234.253.20:8082/artifactory/example-repo-local/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar"'
+                 sh 'curl -X PUT -u admin:password -T  /var/lib/jenkins/workspace/java-3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar "http://54.167.239.83:8082/artifactory/example-repo-local/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar"'
                 }
             }
         }
